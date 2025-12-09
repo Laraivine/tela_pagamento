@@ -1,0 +1,212 @@
+/* Definições globais e de corpo para centralizar */
+body {
+    font-family: sans-serif;
+    background-color: #f7ceedbd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 70px;
+}
+
+/* Container principal da tela de pagamento */
+.payment-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Título principal */
+.payment-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Opções de Pagamento */
+.payment-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Estilo base para cada opção */
+.option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    min-height: 70px;
+}
+
+.option .icon {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.option .label {
+    font-size: 0.9rem;
+}
+
+/* Labels dos campos de input */
+.input-label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px; /* Ajustado para melhor alinhamento */
+}
+
+/* Campos de input de texto */
+.input-field {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.input-field::placeholder {
+    color: #999;
+}
+
+/* --- GRUPO EXPIRY / CVV --- */
+
+/* Container Flex principal para a linha Expiry/CVV */
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Coluna EXPIRY (ocupa 2/3 da largura do grupo) */
+.input-col-expiry {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Coluna CVV (ocupa 1/3 da largura do grupo) */
+.input-col-cvv {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flexbox para alinhar Dia e Ano na mesma linha horizontal */
+.expiry-group-fields {
+    display: flex;
+    gap: 10px; 
+}
+
+/* Garante que Dia e Ano dividam o espaço dentro do seu grupo */
+.expiry-field {
+    flex: 1;
+}
+
+/* Wrapper para estilizar o select (seta personalizada) */
+.select-wrapper {
+    position: relative;
+}
+
+/* Estilo para os campos de seleção (Dia, Ano, CVV) */
+.select-field {
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Cria uma seta personalizada para os campos de seleção */
+.select-wrapper::after {
+    content: '▾';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #e2b3d7;
+    font-size: 1.2rem;
+}
+/* Estilização da Label */
+.input-label {
+    display: block; /* Garante que a label ocupe toda a linha */
+    margin-bottom: 5px; /* Espaço entre a label e o campo */
+    font-size: 14px;
+    color: #333; /* Cor escura para leitura */
+    font-weight: 600; /* Levemente em negrito */
+}
+/* --- RODAPÉ (FOOTER) --- */
+
+.main-footer {
+    background-color: #333; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
+    text-align: center;
+    padding: 20px 0;
+    width: 100%; /* Ocupa toda a largura */
+    
+    /* Garante que o rodapé apareça após o conteúdo principal */
+    margin-top: 40px; 
+}
+
+/* --- RODAPÉ (FOOTER) CORRIGIDO --- */
+
+.main-footer {
+    background-color: #f7ceedbd; 
+    color: #512e4f; 
+    text-align: center;
+    padding: 15px 0; /* Um pouco menos de padding para não ser muito alto */
+    width: 100%; 
+    
+    /* 🔑 CORREÇÃO PRINCIPAL: Fixa o rodapé na parte inferior da tela */
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    
+    margin-top: 0; /* Remove a margem que não é mais necessária com fixed */
+}
+
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #ffd700; /* Cor de destaque ao passar o mouse */
+}
+
+.separator {
+    color: #777;
+    font-size: 0.9rem;
+}
+/* Oculta os campos do cartão por padrão */
+#card-form-fields {
+    display: none; 
+}
